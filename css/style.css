@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / 3);
+  height: 100%;
+  background-color: #e85b2e;
+  z-index: 999;
+}
+
+.canvas.left {
+  left: 0;
+}
+.canvas.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.canvas.right {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+header {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 1em;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img.logo {
+  height: 80%;
+}
+
+nav {
+  width: 60%;
+}
+nav ul.links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul.links a {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+nav ul.links a::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+nav ul.links a:hover::before {
+  width: 80%;
+  border: 1px solid #ffffb1;
+}
+
+header button {
+  border: 1px solid white;
+  width: 50px;
+  height: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+article.hero {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 1em;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+section.content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  overflow-y: hidden;
+}
+
+section.content h1.title {
+  display: block;
+  font-size: 5.5rem;
+  color: #ffffb1;
+  line-height: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+section.content h3.productName {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+section.content p.description {
+  width: 70%;
+  margin: 0.5em 0;
+}
+
+section.content h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+section.content h2.price {
+  margin: 1em 0;
+}
+
+section.content button.btnAddCart {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #ffffb1;
+  width: 150px;
+  cursor: pointer;
+  position: relative;
+}
+
+section.content button.btnAddCart:hover {
+  color: #c82e24;
+}
+section.content button.btnAddCart::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+section.content button.btnAddCart:hover::before {
+  width: 100%;
+  background-color: #ffffb1;
+}
+
+section.product {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+section.product img {
+  position: absolute;
+}
+
+section.product img.imgDoritosPack {
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 2;
+}
+section.product img.imgDoritos {
+  width: 50%;
+  top: 15%;
+  right: 0;
+  transform: translateY(-50%) rotate(20deg);
+  z-index: 3;
+}
+section.product img.imgSauce {
+  width: 60%;
+  top: 70%;
+  left: -25%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+section.product img.imgSpices {
+  width: 40%;
+  bottom: 3%;
+  right: 0;
+  z-index: 1;
+}
+
+section.product img.yellowBg {
+  bottom: -30px;
+  width: 100%;
+}
